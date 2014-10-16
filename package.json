@@ -1,6 +1,6 @@
 {
-  "name": "metalsmith-collection-api",
-  "version": "0.2.0",
+  "name": "metalsmith-json-api",
+  "version": "0.2.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RobinThrift/metalsmith-collection-api"
+    "url": "https://github.com/RobinThrift/metalsmith-json-api"
   },
   "author": "Robin Thrift <thrift.d.robin@googlemail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RobinThrift/metalsmith-collection-api/issues"
+    "url": "https://github.com/RobinThrift/metalsmith-json-api/issues"
   },
-  "homepage": "https://github.com/RobinThrift/metalsmith-collection-api",
+  "homepage": "https://github.com/RobinThrift/metalsmith-json-api",
   "devDependencies": {
     "metalsmith-collections": "^0.6.0",
     "metalsmith": "^1.0.1",
