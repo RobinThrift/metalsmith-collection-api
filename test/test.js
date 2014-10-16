@@ -53,4 +53,23 @@ suite('metalsmith-collection-api', function() {
                 done();
             });
     });
+
+    test('ignore files from glob pattern array', function(done) {
+        Metalsmith(testDir + '/fixtures/input')
+            .use(collections({
+                posts: {
+                    pattern: 'content/po*/*.md',
+                    sortBy: 'date',
+                    reverse: true
+                }
+            }))
+            .use(api({
+                ignore: ['posts/*']
+            }))
+            .destination(testDir + '/tmp')
+            .build(function(err, files) {
+                dirEqual(testDir + '/tmp', testDir + '/fixtures/output/ignore');
+                done();
+            });
+    });
 });

@@ -24,6 +24,7 @@
     "assert-dir-equal": "^1.0.1"
   },
   "dependencies": {
-    "lodash.omit": "^2.4.1"
+    "lodash.omit": "^2.4.1",
+    "multimatch": "^1.0.0"
   }
 }

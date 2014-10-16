@@ -1,5 +1,10 @@
 // index.js
-var omit = require('lodash.omit');
+var omit = require('lodash.omit'),
+    glob = require('multimatch');
+
+function ignore(path, patterns) {
+    return glob([path], patterns);
+}
 
 function createHash(file) {
     'use strict';
@@ -39,12 +44,21 @@ function createFile(data) {
 }
 
 
-module.exports = function() {
+module.exports = function(opts) {
     'use strict';
+    opts = opts || {};
+
     return function(files, metalsmith, done) {
         for (var f in files) {
             var file = files[f],
                 apiFile;
+
+            if (opts.ignore) {
+                if (ignore(f, opts.ignore)) {
+                    continue;
+                }
+            }
+
             file._uid = createHash(file);
             
             apiFile = createFile(file);
