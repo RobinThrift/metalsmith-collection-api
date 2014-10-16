@@ -15,5 +15,15 @@
   "bugs": {
     "url": "https://github.com/RobinThrift/metalsmith-collection-api/issues"
   },
-  "homepage": "https://github.com/RobinThrift/metalsmith-collection-api"
+  "homepage": "https://github.com/RobinThrift/metalsmith-collection-api",
+  "devDependencies": {
+    "metalsmith-collections": "^0.6.0",
+    "metalsmith": "^1.0.1",
+    "should": "^4.0.4",
+    "mocha": "^1.21.5",
+    "assert-dir-equal": "^1.0.1"
+  },
+  "dependencies": {
+    "lodash.omit": "^2.4.1"
+  }
 }
