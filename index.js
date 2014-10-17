@@ -3,7 +3,7 @@ var omit = require('lodash.omit'),
     glob = require('multimatch');
 
 function ignore(path, patterns) {
-    return glob([path], patterns);
+    return !!glob([path], patterns);
 }
 
 function createHash(file) {
@@ -53,8 +53,8 @@ module.exports = function(opts) {
             var file = files[f],
                 apiFile;
 
-            if (opts.ignore) {
-                if (ignore(f, opts.ignore)) {
+            if (opts.pattern) {
+                if (ignore(f, opts.pattern)) {
                     continue;
                 }
             }

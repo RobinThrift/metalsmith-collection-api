@@ -64,10 +64,11 @@ suite('metalsmith-collection-api', function() {
                 }
             }))
             .use(api({
-                ignore: ['posts/*']
+                pattern: ['*.doesnotexist']
             }))
             .destination(testDir + '/tmp')
             .build(function(err, files) {
+                if (err) {throw err;}
                 dirEqual(testDir + '/tmp', testDir + '/fixtures/output/ignore');
                 done();
             });
