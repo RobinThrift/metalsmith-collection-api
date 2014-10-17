@@ -1,10 +1,10 @@
 {
   "name": "metalsmith-json-api",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha -u tdd"
   },
   "repository": {
     "type": "git",
