@@ -3,7 +3,7 @@ var omit = require('lodash.omit'),
     glob = require('multimatch');
 
 function ignore(path, patterns) {
-    return !!glob([path], patterns);
+    return !!glob([path], patterns).length;
 }
 
 function createHash(file) {
