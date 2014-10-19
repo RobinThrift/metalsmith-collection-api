@@ -20,6 +20,7 @@ The unique ids are saved in `_uid` and a link to the api file is saved at `_apiU
 ## Options
 - `path`: The path where the json files will be saved (default to `api/`)
 - `pattern`: glob pattern (array) to specify the files that should be handled by this plugin (defaults to all)
+- `ignoreKeys`: An array of keys that should be ignored from the metalsmith file object (i. e. if you are using a plugin that creates circular references)
 
 
 ### Tests

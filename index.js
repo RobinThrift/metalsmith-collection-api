@@ -21,10 +21,11 @@ function createHash(file) {
 
 function createFile(data, opts) {
     var path = opts.path,
+        ignores = ['mode', 'stats'].concat(opts.ignoreKeys || []),
         fileObj;
     
     fileObj = omit(data, function(_, key) {
-        return key === 'mode' || key === 'stats';
+        return ignores.indexOf(key) !== -1;
     });
 
     fileObj.contents = fileObj.contents.toString();
