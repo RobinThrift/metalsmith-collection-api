@@ -36,6 +36,8 @@ function createFile(data, opts) {
     }
 
     path += fileObj._uid + '.json';
+
+    fileObj._apiURL = path;
     
     return {
         path: path,
