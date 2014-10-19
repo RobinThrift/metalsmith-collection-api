@@ -19,8 +19,8 @@ function createHash(file) {
     return hash.digest('hex');
 }
 
-function createFile(data) {
-    var path = 'api/',
+function createFile(data, opts) {
+    var path = opts.path,
         fileObj;
     
     fileObj = omit(data, function(_, key) {
@@ -60,8 +60,10 @@ module.exports = function(opts) {
             }
 
             file._uid = createHash(file);
+
+            opts.path = (opts.path) ? opts.path : 'api/';
             
-            apiFile = createFile(file);
+            apiFile = createFile(file, opts);
 
             files[apiFile.path] = apiFile.obj;
         }

@@ -54,6 +54,26 @@ suite('metalsmith-collection-api', function() {
             });
     });
 
+
+    test('create json files in custom directory', function(done) {
+        Metalsmith(testDir + '/fixtures/input')
+            .use(collections({
+                posts: {
+                    pattern: 'content/po*/*.md',
+                    sortBy: 'date',
+                    reverse: true
+                }
+            }))
+            .use(api({
+                path: 'api/v2/'
+            }))
+            .destination(testDir + '/tmp')
+            .build(function(err, files) {
+                dirEqual(testDir + '/tmp', testDir + '/fixtures/output/jsonFilesCustom');
+                done();
+            });
+    });
+
     test('ignore files from glob pattern array', function(done) {
         Metalsmith(testDir + '/fixtures/input')
             .use(collections({
